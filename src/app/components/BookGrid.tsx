@@ -18,7 +18,7 @@ const BookGrid: React.FC<BookGridProps> = ({ books, onAddToCart }) => {
   const [sortBy, setSortBy] = useState('title');
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(8);
+  const [itemsPerPage, setItemsPerPage] = useState(5);
   const [featuredCarouselIndex, setFeaturedCarouselIndex] = useState(0);
 
   // Memoize featured books to prevent re-calculation on every render
@@ -146,8 +146,8 @@ const BookGrid: React.FC<BookGridProps> = ({ books, onAddToCart }) => {
                     onClick={() => goToFeaturedPage(index)}
                     className={`w-2 h-2 rounded-full transition-colors duration-200 cursor-pointer ${
                       index === featuredCarouselIndex 
-                        ? 'bg-blue-600' 
-                        : 'bg-gray-300 hover:bg-gray-400'
+                        ? 'bg-amber-600' 
+                        : 'bg-gray-300 hover:bg-amber-400'
                     }`}
                     aria-label={`Go to featured books page ${index + 1}`}
                   />
